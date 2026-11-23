@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Nisha ❤️</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Georgia,serif;
+ background:linear-gradient(135deg,#fff7fa,#fce3ee,#fff);
+ color:#874b68;
+ text-align:center;
+}
+section{
+ padding:35px 18px;
+ max-width:650px;
+ margin:auto;
+}
+h1{font-size:38px;color:#bd6990}
+h2{color:#b75f88}
+p{line-height:1.8}
+button{
+ background:#d987ac;
+ color:white;
+ border:0;
+ padding:13px 22px;
+ border-radius:25px;
+ font-size:15px;
+ margin:8px;
+ cursor:pointer;
+}
+button:active{transform:scale(.97)}
+.card{
+ background:#ffffffd9;
+ padding:22px;
+ border-radius:22px;
+ margin:18px 0;
+ box-shadow:0 5px 20px #e8b9cf55;
+}
+.flower{font-size:35px}
+.hidden{display:none}
+.envelopes{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:12px;
+}
+.envelope{
+ background:#fff0f6;
+ padding:20px 8px;
+ border-radius:16px;
+ cursor:pointer;
+ border:1px solid #f4c4d8;
+}
+#message{font-size:18px;line-height:1.7}
+input{max-width:100%;margin:12px}
+.photo{
+ width:100%;
+ max-height:280px;
+ object-fit:contain;
+ border-radius:15px;
+ margin-top:12px
+}
+footer{padding:30px;color:#b77998}
+</style>
+</head>
+
+<body>
+
+<section id="home">
+<div class="flower">🌷 ✨ 🌸</div>
+<h1>Hey Nisha! ❤️</h1>
+<h2>A Little World Made For You</h2>
+<p>24 November 2026</p>
+
+<div class="card">
+<p>Today is not just another day...</p>
+<h2>Today is YOUR day! 🎂</h2>
+<p>I made a little surprise just for you.</p>
+<button onclick="start()">Open Your Surprise 💌</button>
+</div>
+
+<div>🌸 🦋 ⭐ 🌷</div>
+</section>
+
+<section id="intro" class="hidden">
+<h1>Welcome, Nisha!</h1>
+<div class="card">
+<p>Before you explore this little world, remember one thing...</p>
+<h2>You are special in your own beautiful way. 💗</h2>
+<p>Your kindness, simplicity and beautiful nature make you unique.</p>
+<button onclick="show('game')">Let's Play a Little Game 🎮</button>
+</div>
+</section>
+
+<section id="game" class="hidden">
+<h1>Little Birthday Quiz 🎀</h1>
+<div class="card">
+<h2 id="question"></h2>
+<div id="answers"></div>
+<p id="feedback"></p>
+<button id="next" class="hidden" onclick="nextQuestion()">Next Question →</button>
+</div>
+</section>
+
+<section id="envelopes" class="hidden">
+<h1>7 Little Surprises 💌</h1>
+<p>Open every envelope to discover a little message.</p>
+
+<div class="envelopes" id="envelopeList"></div>
+
+<div class="card">
+<p id="message">Choose an envelope! 🌷</p>
+</div>
+
+<button onclick="show('letter')">Open Your Special Letter ❤️</button>
+</section>
+
+<!-- UPDATED LETTER SECTION -->
+
+<section id="letter" class="hidden">
+<h1>A Little Letter For You 🌷</h1>
+
+<div class="card">
+<div class="flower">🌹</div>
+
+<p>Dear Nisha, 🌸</p>
+
+<p>
+Kuch log apni khoobsurati se nahi,
+balki apne nature aur apni achhi aadaton
+se dil mein ek alag jagah bana lete hain,
+aur tum unhi mein se ek ho.
+</p>
+
+<p>
+Tumhari simplicity, tumhara sweet nature
+aur tumhara baat karne ka andaaz tumhe
+baaki logon se alag banata hai.
+</p>
+
+<p>
+Tumhari smile aur tumhari chhoti-chhoti
+baatein bhi kisi ka din achha bana sakti hain.
+</p>
+
+<p>
+Main bas yahi chahta hoon ki tum kabhi
+apni achhai na badalna. Hamesha apne jaisi
+rehna, apne sapno ko poora karna aur
+zindagi ke har pal ko khulkar jeena.
+</p>
+
+<p>
+Ho sakta hai tumhe khud pata na ho ki
+tum kitni achhi insaan ho, lekin tumhari
+ye qualities tumhe sach mein special banati hain.
+</p>
+
+<h3>Never stop being the beautiful soul you are. 🌷</h3>
+
+<p>
+May your life always be filled with
+happiness, beautiful memories and
+endless reasons to smile.
+</p>
+
+<h2>Happy Birthday, Nisha! 🎂❤️</h2>
+
+<p>
+With lots of good wishes,<br>
+Someone who wishes the best for you. 🌸
+</p>
+</div>
+
+<button onclick="show('photos')">One More Surprise ✨</button>
+</section>
+
+<!-- PHOTOS SECTION -->
+
+<section id="photos" class="hidden">
+<h1>Beautiful Memories 📸</h1>
+<p>Yahan apni favourite photos add kar sakte ho.</p>
+
+<div class="card">
+<input type="file" accept="image/*" multiple onchange="addPhotos(event)">
+<div id="photoArea"></div>
+</div>
+
+<button onclick="show('final')">The Final Surprise 🎂</button>
+</section>
+
+<!-- FINAL SURPRISE -->
+
+<section id="final" class="hidden">
+<div class="flower">🌸 ✨ 🦋</div>
+<h1>Happy Birthday Nisha! ❤️</h1>
+
+<div class="card">
+<h2>You Deserve All The Happiness In The World.</h2>
+
+<p>
+May your smile always shine, your dreams come true,
+and your life be filled with beautiful moments.
+</p>
+
+<h1>Stay Happy, Hubby! 🎀</h1>
+<p>24.11.2026</p>
+
+<button onclick="celebrate()">Celebrate Your Day 🎉</button>
+<div id="celebration"></div>
+</div>
+</section>
+
+<footer>
+Made specially for Nisha 🌷 | With best wishes ❤️
+</footer>
+
+<script>
+
+const sections=[
+'home','intro','game','envelopes','letter','photos','final'
+];
+
+function show(id){
+ sections.forEach(s=>
+ document.getElementById(s).classList.add('hidden')
+ );
+ document.getElementById(id).classList.remove('hidden');
+ window.scrollTo(0,0);
+}
+
+function start(){
+ show('intro');
+}
+
+const questions=[
+ {
+ q:"Who is the birthday girl today?",
+ a:["Nisha ❤️","A princess","Both answers!"],
+ correct:0
+ },
+ {
+ q:"What makes a person truly beautiful?",
+ a:["Kindness","Good nature","Both!"],
+ correct:2
+ },
+ {
+ q:"What should never disappear?",
+ a:["Your smile","Your happiness","Both!"],
+ correct:2
+ },
+ {
+ q:"What is today's special gift?",
+ a:["A surprise","A birthday wish","Both!"],
+ correct:2
+ },
+ {
+ q:"One last question: Are you ready for your letter?",
+ a:["Yes! 💌","Of course!","Let's go!"],
+ correct:0
+ }
+];
+
+let qi=0;
+
+function loadQuestion(){
+ document.getElementById('question').textContent=
+ questions[qi].q;
+
+ document.getElementById('feedback').textContent='';
+
+ document.getElementById('next').classList.add('hidden');
+
+ let box=document.getElementById('answers');
+ box.innerHTML='';
+
+ questions[qi].a.forEach((a,i)=>{
+ let b=document.createElement('button');
+ b.textContent=a;
+
+ b.onclick=()=>{
+ box.querySelectorAll('button').forEach(x=>x.disabled=true);
+
+ document.getElementById('feedback').textContent=
+ i===questions[qi].correct
+ ?'Correct! You deserve all the happiness! 💗'
+ :'A lovely choice! Every answer is special. 🌷';
+
+ document.getElementById('next').classList.remove('hidden');
+ };
+
+ box.appendChild(b);
+ });
+}
+
+function nextQuestion(){
+ qi++;
+
+ if(qi<questions.length){
+ loadQuestion();
+ }else{
+ show('envelopes');
+ }
+}
+
+loadQuestion();
+
+const messages=[
+"Your kindness is one of the most beautiful things about you. 🌷",
+"Never lose your beautiful smile. 🦋",
+"You deserve happiness every single day. 💗",
+"May all your dreams find their way to you. ⭐",
+"Your simplicity makes you special. 🌸",
+"Keep being the wonderful person you are. 🎀",
+"Thank you for being you. Happy Birthday, Nisha! ❤️"
+];
+
+const list=document.getElementById('envelopeList');
+
+messages.forEach((m,i)=>{
+ let d=document.createElement('div');
+
+ d.className='envelope';
+ d.innerHTML='<div style="font-size:32px">💌</div>Envelope '+(i+1);
+
+ d.onclick=()=>{
+ document.getElementById('message').textContent=m;
+ };
+
+ list.appendChild(d);
+});
+
+function addPhotos(e){
+ const area=document.getElementById('photoArea');
+
+ [...e.target.files].forEach(file=>{
+ if(!file.type.startsWith('image/'))return;
+
+ let img=document.createElement('img');
+ img.className='photo';
+ img.src=URL.createObjectURL(file);
+
+ area.appendChild(img);
+ });
+}
+
+function celebrate(){
+ document.getElementById('celebration').innerHTML=
+ '<h1>🎉 🎂 🎊 🌸 🎉</h1><p>Lots of love and best wishes for your new year!</p>';
+}
+
+</script>
+
+</body>
+</html>
